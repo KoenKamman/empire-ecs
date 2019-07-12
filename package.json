@@ -1,0 +1,87 @@
+{
+  "name": "empire-ecs",
+  "version": "0.0.0-development",
+  "description": "Implementation of the entity-component-system (ECS) architectural pattern.",
+  "main": "dist/empire-ecs.cjs.js",
+  "module": "dist/empire-ecs.esm.js",
+  "types": "dist/types/index.d.ts",
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/prompt"
+    }
+  },
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "npm run test -- --coverage",
+    "report:coverage": "npm run test:coverage && codecov",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "rollup -c",
+    "lint": "eslint src/**/*.{ts,js}",
+    "lint:fix": "npm run lint -- --fix",
+    "semantic-release": "semantic-release",
+    "commit": "npx git-cz"
+  },
+  "files": [
+    "/dist",
+    "README.md",
+    "package.json",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KoenKamman/empire-ecs.git"
+  },
+  "keywords": [
+    "empire",
+    "entity",
+    "component",
+    "system",
+    "ecs",
+    "entity-component-system"
+  ],
+  "author": {
+    "name": "Koen Kamman"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KoenKamman/empire-ecs/issues"
+  },
+  "homepage": "https://github.com/KoenKamman/empire-ecs#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-typescript": "^7.3.3",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/prompt": "^8.0.0",
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/git": "^7.0.16",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.2",
+    "@typescript-eslint/eslint-plugin": "^1.12.0",
+    "@typescript-eslint/parser": "^1.12.0",
+    "codecov": "^3.5.0",
+    "commitizen": "^3.1.1",
+    "eslint": "^6.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.0",
+    "rollup": "^1.16.7",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1",
+    "semantic-release": "^15.13.18",
+    "semantic-release-cli": "^5.1.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  }
+}
